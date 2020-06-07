@@ -39,10 +39,12 @@ public class SingletonBehaviour<T> : MonoBehaviour where T : MonoBehaviour
 						GameObject singleton = new GameObject();
 						_instance = singleton.AddComponent<T>();
 						singleton.name = "(singleton) "+ typeof(T).ToString();
- 
+
 						DontDestroyOnLoad(singleton);
 					}
 				}
+
+				(_instance as SingletonBehaviour<T>).Init();
  
 				return _instance;
 			}
@@ -50,6 +52,12 @@ public class SingletonBehaviour<T> : MonoBehaviour where T : MonoBehaviour
 	}
  
 	private static bool applicationIsQuitting = false;
+
+	public virtual void Init()
+	{
+
+	}
+
 	/// <summary>
 	/// When Unity quits, it destroys objects in a random order.
 	/// In principle, a Singleton is only destroyed when application quits.

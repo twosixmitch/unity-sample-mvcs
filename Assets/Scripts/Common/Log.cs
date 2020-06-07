@@ -1,5 +1,4 @@
-﻿using System;
-
+﻿
 public class Log
 {
     public static LogLevel Level { get; set; }
