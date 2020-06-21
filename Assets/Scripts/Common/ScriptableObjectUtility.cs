@@ -6,7 +6,7 @@ using UnityEditor;
 public static class ScriptableObjectUtility
 {
   /// <summary>
-  //	This makes it easy to create, name and place unique new ScriptableObject asset files.
+  // This makes it easy to create, name and place unique new ScriptableObject asset files.
   /// </summary>
   public static void CreateAsset<T>() where T : ScriptableObject
   {
