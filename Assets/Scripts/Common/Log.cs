@@ -1,37 +1,37 @@
 ﻿
 public class Log
 {
-    public static LogLevel Level { get; set; }
+  public static LogLevel Level { get; set; }
 
-    public static void Debug(string message)
+  public static void Debug(string message)
+  {
+    if (LogLevel.Debug <= Level)
     {
-        if (LogLevel.Debug <= Level)
-        {
-            UnityEngine.Debug.Log(message);
-        }
+      UnityEngine.Debug.Log(message);
     }
+  }
 
-    public static void Info(string message)
+  public static void Info(string message)
+  {
+    if (LogLevel.Info <= Level)
     {
-        if (LogLevel.Info <= Level)
-        {
-            UnityEngine.Debug.Log(message);
-        }
+      UnityEngine.Debug.Log(message);
     }
+  }
 
-    public static void Warning(string message)
+  public static void Warning(string message)
+  {
+    if (LogLevel.Warning <= Level)
     {
-        if (LogLevel.Warning <= Level)
-        {
-            UnityEngine.Debug.LogWarning(message);
-        }
+      UnityEngine.Debug.LogWarning(message);
     }
+  }
 
-    public static void Error(string message)
+  public static void Error(string message)
+  {
+    if (LogLevel.Error <= Level)
     {
-        if (LogLevel.Error <= Level)
-        {
-            UnityEngine.Debug.LogError(message);
-        }
+      UnityEngine.Debug.LogError(message);
     }
+  }
 }

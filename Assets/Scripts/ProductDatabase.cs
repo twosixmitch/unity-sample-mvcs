@@ -6,13 +6,13 @@ using UnityEditor;
 
 public class ProductDatabase : ScriptableObject
 {
-    public List<ProductAsset> ProductAssets;
+  public List<ProductAsset> ProductAssets;
 
-    #if UNITY_EDITOR
-	[MenuItem("Assets/Create/UnitySampleMVCS/ProductDatabase")]
-	public static void CreateAsset()
-	{
-		ScriptableObjectUtility.CreateAsset<ProductDatabase>();
-	}
-	#endif
+#if UNITY_EDITOR
+  [MenuItem("Assets/Create/UnitySampleMVCS/ProductDatabase")]
+  public static void CreateAsset()
+  {
+    ScriptableObjectUtility.CreateAsset<ProductDatabase>();
+  }
+#endif
 }

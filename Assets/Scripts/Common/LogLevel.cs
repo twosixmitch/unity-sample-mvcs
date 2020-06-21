@@ -1,8 +1,8 @@
 ﻿
-public enum LogLevel 
+public enum LogLevel
 {
-    Error = 0,
-    Warning,
-    Info,
-    Debug,
+  Error = 0,
+  Warning,
+  Info,
+  Debug,
 }
