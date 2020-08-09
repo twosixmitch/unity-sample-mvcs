@@ -8,8 +8,9 @@ public class ProductService : SingletonBehaviour<ProductService>
   public override void Init()
   {
     _factory = new ProductFactory();
-    _factory.LoadDatabase();
+    _factory.LoadDatabase(); // from disk
 
+    // Convert the raw data into useable models.
     _products = _factory.GetProducts();
   }
 

@@ -3,10 +3,10 @@ public class ProductModel
 {
   public string Name { get; set; }
   public float Cost { get; set; }
-  
-  public ProductModel(string name, float cost)
+
+  // Light logic that cuts down duplicated code. 
+  public string CostDescription()
   {
-    Name = name;
-    Cost = cost;
+    return $"The cost is ${Cost}";
   }
 }

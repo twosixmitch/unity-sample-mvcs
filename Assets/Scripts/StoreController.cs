@@ -12,21 +12,24 @@ public class StoreController : MonoBehaviour
   {
     _productViews = new List<ProductView>();
 
-    var products = ProductService.Instance.GetAllProducts();
+    // Use a service to retrieve the models.
+    var productModels = ProductService.Instance.GetAllProducts();
 
-    foreach (var product in products)
+    foreach (var product in productModels)
     {
-      // Create the view item.
+      // Create a new instance of the view.
       var itemGO = Instantiate(ProductViewPrefab, Vector3.zero, Quaternion.identity);
       itemGO.transform.SetParent(ProductViewContainer.transform, false);
       itemGO.transform.SetAsLastSibling();
 
       // Get the view script.
       var itemView = itemGO.GetComponent<ProductView>();
+
+      // Hold onto the view for further updates.
       _productViews.Add(itemView);
 
-      // Populate it with the product information.
-      itemView.Populate(product.Name, product.Cost);
+      // The controller passes the model to the view.
+      itemView.Populate(product.Name, product.CostDescription());
     }
   }
 }

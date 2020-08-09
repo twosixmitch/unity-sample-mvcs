@@ -3,6 +3,10 @@ public class ProductBuilder
 {
   public static ProductModel Build(ProductAsset asset)
   {
-    return new ProductModel(asset.Name, asset.Cost);
+    return new ProductModel()
+    {
+      Name = asset.Name,
+      Cost = asset.Cost
+    };
   }
 }

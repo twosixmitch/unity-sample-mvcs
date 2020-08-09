@@ -6,9 +6,10 @@ public class ProductView : MonoBehaviour
   public Text NameText;
   public Text CostText;
 
-  public void Populate(string name, float cost)
+  // Present the information to the user.
+  public void Populate(string name, string cost)
   {
     NameText.text = name;
-    CostText.text = $"${cost}";
+    CostText.text = cost;
   }
 }
